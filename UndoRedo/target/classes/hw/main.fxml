@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="350.0" prefWidth="900.0" style="-fx-border-color: blue; -fx-background-color: aliceblue;" stylesheets="@../hw/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw.Controller" onKeyPressed="#keyHandler"
+            onKeyTyped="#keyHandler">
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="10.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <Label text="Words:">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="countLbl" prefHeight="36.0" prefWidth="39.0" text="0">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="289.0" spacing="10.0">
+               <children>
+                  <Label text="Current Token:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tokenLbl" prefHeight="28.0" prefWidth="145.0" textAlignment="CENTER">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <GridPane prefHeight="50.0" prefWidth="452.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="64.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="389.0" minWidth="10.0" prefWidth="388.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Undo:" textAlignment="CENTER">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Redo:" textAlignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="undoStackLbl" prefHeight="28.0" prefWidth="350.0" textAlignment="CENTER" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="redoStackLbl" prefWidth="350.0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Eras Demi ITC" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Undo/Redo" textAlignment="CENTER" textFill="#070600">
+               <font>
+                  <Font name="Arial" size="46.0" />
+               </font>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <Label fx:id="writingLbl" alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: silver;" wrapText="true" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>
